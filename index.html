@@ -638,6 +638,107 @@
     flex-direction: column;
     height: 100%;
 }
+/* Style du Titre (identique à Mes Réalisations) */
+.section-title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60%; /* Ajuste selon ton envie */
+    height: 4px;
+    background-color: #2563eb; /* Ton bleu d'accentuation */
+    margin-top: 10px;
+}
+
+/* Conteneur et Cartes de veille */
+.veille-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.veille-card {
+    background-color: #1e293b; /* Couleur sombre de tes cases */
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #334155;
+}
+
+.veille-subject-title {
+    color: #60a5fa; /* Bleu clair pour les titres de sujets */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.veille-description {
+    color: #94a3b8; /* Texte grisé comme ton image */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Images dans la veille */
+.veille-image-box {
+    background-color: #0f172a; /* Fond encore plus sombre pour isoler l'image */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.veille-image-box img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.img-legend {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Bouton Source */
+.veille-footer {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.btn-github {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-github:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+/* Pour s'assurer que l'image BlackMamba s'intègre bien */
+.veille-image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #334155; /* Bordure fine pour rappeler ton style */
+}
+
+/* Style spécifique pour les titres secondaires à l'intérieur d'une carte */
+.veille-card h3 {
+    border-left: 4px solid #3b82f6;
+    padding-left: 15px;
+}
 
     </style>
 </head>
@@ -966,6 +1067,7 @@
             <div class="project-links">
                 <a href="https://github.com/axelandria12/SiteFranceMobilier" class="btn-git" target="_blank">GitHub</a>
                 <a href="Rapport-France-Mobilier.pdf" class="btn-readme" target="_blank">README</a>
+                <a href="gamme.pdf" class="btn-readme" target="_blank">READQuestion</a>
             </div>
         </div>
 
@@ -973,20 +1075,78 @@
 </section>
 
     <section id="veille">
-    <h3>Veille Technologique</h3>
+    <h2 class="section-title">Veille Technologique</h2>
     
-    <div class="info-box">
-        <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Robotique</h4>
-        <p style="color: var(--text-muted);">
-            Suivi des innovations dans le domaine de la <b>robotique industrielle et domestique</b>.
-        </p>
-    </div>
-    
-    <div class="info-box">
-        <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Je ne sais pas encore</h4>
-        <p style="color: var(--text-muted);">
-            ? <b>?</b>.
-        </p>
+    <div class="veille-container">
+        <div class="veille-card">
+            <h3 class="veille-subject-title">L'émergence des Agents Autonomes : Clawdbot</h3>
+            
+            <p class="veille-description">
+                En 2026, l'IA passe du simple chat à l'action concrète avec les agents autonomes. 
+                Clawdbot se distingue par sa capacité à naviguer de manière indépendante sur le web pour exécuter des tâches complexes comme effectuez une reservations de place de restaurants ou encore un tri automatique des mails ainsi qu'un compte rendu journalier par message sur votre téléphone des mails importants.
+            </p>
+
+            <div class="veille-image-box">
+                <img src="clawd1.png" alt="Capacités Clawdbot">
+                <p class="img-legend">Figure 1 : Automatisation multi-tâches (calendrier, mails, réservations).</p>
+            </div>
+
+            <p class="veille-description">
+                Sa force réside dans sa connectivité totale. Contrairement aux modèles isolés, il interagit directement avec des plateformes comme WhatsApp ou Slack pour agir en arrière-plan, pas besoin de prompt par terminal l'ia peut être commander par message whatsapp ou encore discord et peut répondre automatiquement au message envoyé sur votre boîte téléphonique selon vos disponibilité sur votre calendrier ou encore grâce à sa mémoire selon les discussion que vous avez eu avec l'ia il y a jusqu'a 3 semaine.
+            </p>
+
+            <div class="veille-image-box">
+                <img src="clawd2.png" alt="Libération de l'IA">
+                <p class="img-legend">Figure 2 : Comparaison entre l'IA statique et l'IA connectée "partout".</p>
+            </div>
+
+            <p class="veille-description">
+               Cependant Attention ⚠️ il n'est pas recommendé d'utilisé cette assisstant sur son ordinateur personnel, car il demandera accés a toutes vos informations (email,mot de passe enregistré, note ,carte bancaire ,messagerie et pourra effectuez des paiement sans que vous le vouliez lors d'une tâche que vous allez lui confiez! (ex:abonnement a une newsletter payante lors de la demande de récupération d'information sur un sujet)).
+            </p>
+        </div>
+
+
+        <div class="veille-card">
+            <h3 class="veille-subject-title">Cybersécurité : IA Malwares Polymorphes</h3>
+            
+            <p class="veille-description">
+                L'année 2026 est marquée par l'émergence de preuves de concept alarmantes, notamment les recherches menées par <strong>HYAS</strong> sur les malwares de nouvelle génération. 
+            </p>
+
+            <div class="veille-image-box">
+                <img src="black_mamba.png" alt="BlackMamba Polymorphic Malware">
+                <p class="img-legend">Figure 3 : BlackMamba, un keylogger polymorphe synthétisé par IA capable de modification de code à la volée.</p>
+            </div>
+
+            <p class="veille-description">
+                Le malware <strong>BlackMamba</strong> illustre cette menace : il utilise l'IA pour réécrire son propre code malveillant à chaque exécution, rendant sa signature indétectable par les systèmes de sécurité traditionnels (EDR/Antivirus). 
+                Cette capacité d'<strong>obfuscation dynamique</strong> transforme un simple virus en une menace persistante et évolutive.
+            </p>
+
+            <h3 class="veille-subject-title" style="margin-top: 30px;">IA de Rupture : Le danger des modèles "Privés"</h3>
+            <p class="veille-description">
+                Au-delà des malwares, le débat porte sur des modèles d'IA jugés <strong>trop dangereux pour être rendus publics</strong>, à l'image de <strong>Claude Mythos</strong>. 
+            </p>
+            
+            <p class="veille-description">
+                Ce modèle ultra-spécialisé possède une capacité de détection de <strong>failles Zero-Day</strong> (failles non encore répertoriées) jugée surpuissante. 
+                Si un tel outil tombait entre de mauvaises mains, il permettrait d'automatiser la découverte et l'exploitation de vulnérabilités critiques dans n'importe quel logiciel mondial avant même que les développeurs puissent réagir.
+            </p>
+
+            <p class="veille-description">
+                Le défi majeur de 2026 reste donc la régulation de ces modèles de "Shadow AI"(Le Shadow AI (ou IA fantôme) est l'utilisation par les collaborateurs d'outils, de modèles ou de plateformes d'intelligence artificielle sans l'approbation officielle ni la supervision de la Direction des Systèmes d'Information (DSI).) et le passage impératif à une <strong>défense prédictive</strong> gérée par des IA de protection capables de contrer ces attaques automatisées.
+            </p>
+        </div>
+
+        <div class="veille-footer">
+            <a href="https://openclaw.ai/" class="btn-github">Sources de veille Clawdbot</a>
+        </div>
+        <div class="veille-footer">
+            <a href="https://www.blogdumoderateur.com/claude-mythos-modele-ia-dangereux-public/" class="btn-github">Sources de veille Claude Mythos</a>
+        </div>
+        <div class="veille-footer">
+            <a href="https://www.advens.com/media/securite-operationnelle/blackmamba-et-la-generation-de-malware-polymorphique-grace-a-la-iia/" class="btn-github">Sources de veille malware polymorphique(Black Mamba)</a>
+        </div>
     </div>
 </section>
 
